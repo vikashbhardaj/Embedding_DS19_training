@@ -20,7 +20,15 @@ const vizUrl =
 const vizOptions = {
   height: 800,
   width: 1000,
-  hideToolbar: true, //does not work with tableau public
+  hideToolbar: true,
+  Category: ["Technology", "Furniture"],
+  onFirstInteractive: function () {
+    console.log("Yo, the viz is interactive! Disabling the button!");
+    document.getElementById("exportPdf").disabled = false;
+    console.log(document.querySelectorAll("button"));
+  },
+
+  //does not work with tableau public
 };
 
 function initViz() {
